@@ -1,5 +1,6 @@
 package com.example.movies.ui.single_movie_details
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,7 +15,7 @@ import com.example.movies.data.api.TheMovieDbClient
 import com.example.movies.data.api.TheMovieDbInterface
 import com.example.movies.data.repository.NetworkState
 import com.example.movies.data.vo.MovieDetails
-import kotlinx.android.synthetic.main.activity_single_moview.*
+import kotlinx.android.synthetic.main.activity_single_movie.*
 import java.text.NumberFormat
 import java.util.*
 
@@ -25,7 +26,7 @@ class SingleMovie : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_single_moview)
+        setContentView(R.layout.activity_single_movie)
 
         val movieId: Int = intent.getIntExtra("id", 1)
 
@@ -44,12 +45,13 @@ class SingleMovie : AppCompatActivity() {
         })
     }
 
-    fun bindUI(it: MovieDetails) {
+    @SuppressLint("SetTextI18n")
+    private fun bindUI(it: MovieDetails) {
         movie_title.text = it.title
         movie_tagline.text = it.tagline
         movie_release_date.text = it.releaseDate
         movie_rating.text = it.rating.toString()
-        movie_runtime.text = it.runtime.toString() + "minutes"
+        movie_runtime.text = "${it.runtime}minutes"
         movie_overview.text = it.overview
 
         val formatCurrency = NumberFormat.getCurrencyInstance(Locale.US)

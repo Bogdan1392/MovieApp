@@ -19,7 +19,7 @@ class MovieDetailsNetworkDataSource(private val apiService: TheMovieDbInterface,
         get() = _downloadedMovieDetailsResponse
 
     fun fetchMovieDetails(movieId: Int) {
-        _networkState.postValue(NetworkState.LOADED)
+        _networkState.postValue(NetworkState.LOADING)
 
         try {
             compositeDisposable.add(
@@ -37,7 +37,6 @@ class MovieDetailsNetworkDataSource(private val apiService: TheMovieDbInterface,
                     )
             )
         }
-
         catch (e: Exception) {
             Log.e("MovieDetailsDataSource", e.message)
         }

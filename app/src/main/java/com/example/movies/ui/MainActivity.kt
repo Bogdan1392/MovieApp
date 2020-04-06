@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         btn.setOnClickListener {
             val intent = Intent(this, SingleMovie::class.java)
-            intent.putExtra("id", 299534)
+            intent.putExtra("id", 245891)
             this.startActivity(intent)
         }
     }
