@@ -3,6 +3,7 @@ package com.example.movies.ui.popular_movie
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
@@ -15,6 +16,7 @@ import com.example.movies.data.api.TheMovieDbInterface
 import com.example.movies.data.repository.NetworkState
 import com.example.movies.data.vo.Movie
 import com.example.movies.ui.single_movie_details.SingleMovie
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +27,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNav.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.popularMovies -> {
+                    Log.i("test", "popular")
+                }
+                R.id.latestMovies -> {
+                    Log.i("test", "latest")
+                }
+                R.id.upcomingMovies -> {
+                    Log.i("test", "upcoming")
+                }
+            }
+            true
+        }
 
         val apiService : TheMovieDbInterface = TheMovieDbClient.getClient()
 
