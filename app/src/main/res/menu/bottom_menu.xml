@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Popular" android:icon="@drawable/ic_movie_pop"/>
-    <item android:title="Latest" android:icon="@drawable/ic_movie_black_24dp"/>
-    <item android:title="Upcoming" android:icon="@drawable/ic_local_movies"/>
+    <item
+        android:id="@+id/popularFragment"
+        android:title="Popular"
+        android:icon="@drawable/ic_movie_pop"/>
+    <item
+        android:id="@+id/latestFragment"
+        android:title="Latest"
+        android:icon="@drawable/ic_movie_black_24dp"/>
+    <item
+        android:id="@+id/upcomingFragment"
+        android:title="Upcoming"
+        android:icon="@drawable/ic_local_movies"/>
 </menu>

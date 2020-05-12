@@ -6,36 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.popular_movie.MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/progress_bar_popular"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/txt_error_popular"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:text="Connection problem!"
-            android:visibility="gone"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_movie_list"
-            android:layout_margin="4dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"/>
-
-
-    </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#546E7A"
@@ -44,4 +16,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_menu"/>
 
+    <fragment
+        android:id="@+id/fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/movie_nav" />
 </androidx.constraintlayout.widget.ConstraintLayout>

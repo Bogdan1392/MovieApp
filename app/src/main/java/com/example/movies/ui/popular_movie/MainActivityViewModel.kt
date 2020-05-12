@@ -7,7 +7,7 @@ import com.example.movies.data.repository.NetworkState
 import com.example.movies.data.vo.Movie
 import io.reactivex.disposables.CompositeDisposable
 
-class MainActivityViewModel(private val movieRepository : MoviePagedListRepository) : ViewModel() {
+class PopularMoviesViewModel(private val movieRepository : MoviePagedListRepository) : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
 

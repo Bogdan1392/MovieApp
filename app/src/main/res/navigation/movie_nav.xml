@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movie_nav"
+    app:startDestination="@id/popularMovies">
+
+    <fragment
+        android:id="@+id/latestMovies"
+        android:name="com.example.movies.ui.popular_movie.LatestMovies"
+        android:label="Latest Movies"
+        tools:layout="@layout/fragment_latest_movies" />
+    <fragment
+        android:id="@+id/upcomingMovies"
+        android:name="com.example.movies.ui.popular_movie.UpcomingMovies"
+        android:label="Upcoming Movies"
+        tools:layout="@layout/fragment_upcoming_movies" />
+    <fragment
+        android:id="@+id/popularMovies"
+        android:name="com.example.movies.ui.popular_movie.PopularMovies"
+        android:label="Popular Movies"
+        tools:layout="@layout/fragment_popular_movies" />
+</navigation>
