@@ -12,6 +12,12 @@ interface TheMovieDbInterface {
     @GET("movie/popular")
     fun getPopularMovie(@Query("page") page: Int): Single<MovieResponse>
 
+    @GET("movie/latest")
+    fun getLatestMovie(@Query("page") page: Int): Single<MovieResponse>
+
+    @GET("movie/upcoming")
+    fun getUpcomingMovie(@Query("page") page: Int): Single<MovieResponse>
+
     @GET("movie/{movie_id}")
     fun getMovieDetails(@Path("movie_id") id: Int): Single<MovieDetails>
 }
